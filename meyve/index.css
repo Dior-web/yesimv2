@@ -1,0 +1,96 @@
+/* index.css */
+.vegetables-table ::selection {
+  background-color: #c1d85a !important; /* Açık sarı */
+}
+/* Section için stil */
+.vegetables-table-container {
+  margin-top: 50px;
+  font-family: 'Arial', sans-serif;
+  padding: 15px; /* İç boşlukları biraz daha azalttık */
+  background-color: #f8f9fa; /* Yumuşak, nötr bir arka plan rengi */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+  max-width: 80%; /* Section genişliğini sınırlıyoruz */
+  margin: 0 auto; /* Ortalıyoruz */
+}
+
+/* Başlık kısmı */
+.vegetables-table-container h2 {
+  color: #2c3e50; /* Koyu gri başlık rengi */
+  font-size: 1.8em; /* Başlık boyutunu biraz küçülttük */
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px; /* Başlık ile tablo arasındaki boşluğu biraz daha küçülttük */
+}
+
+/* Tablo için genel stil */
+.vegetables-table {
+  width: 80% !important; /* Tabloyu %50 genişliğe sabitliyoruz */
+  margin: 0 auto; /* Ortalıyoruz */
+  border-collapse: collapse;
+}
+
+.vegetables-table th,
+.vegetables-table td {
+  padding: 8px 10px; /* Hücre içi boşluğu azaltıyoruz */
+  text-align: center;
+  font-size: 0.9em; /* Font boyutunu biraz küçültüyoruz */
+  color: #000000; /* Yazı rengini beyaz yapıyoruz */
+}
+
+/* Başlık satırına özel stil */
+.vegetables-table th {
+  background-color: #7ab7e0; /* Canlı mavi arka plan */
+  color: rgb(12, 6, 6); /* Başlık yazı rengi */
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Satır renkleri */
+.vegetables-table thead th {
+  background-color: #083350 !important; /* Başlık satırı için mavi arka plan */
+  color: rgb(255, 255, 255); /* Başlık yazı rengi */
+}
+.vegetables-table tr:nth-child(odd) {
+  background-color: #ecf0f1; /* Çok açık gri renk */
+}
+
+.vegetables-table tr:nth-child(even) {
+  background-color: #94b2d6; /* Açık mavi tonları */
+}
+
+/* Hover efekti */
+.vegetables-table tr:hover {
+    /* Hover sırasında gri tonunda renk değişimi */
+      /* Yazı rengini beyaz yapmak için !important kullanalım */
+  cursor: pointer;
+}
+
+.vegetables-table tr:hover td,
+tr:hover th {
+    /* Bütün hücrelerde beyaz metin rengi */
+}
+
+/* Kenarlıklar */
+.vegetables-table td,
+.vegetables-table th {
+  border: 1px solid #ffffff; /* İnce beyaz kenarlık */
+}
+
+/* Tabloyu daha belirgin hale getirmek */
+.vegetables-table td {
+  background-color: #ffffff; /* Hücrelerin arka planı beyaz */
+  border-radius: 5px; /* Köşeleri yuvarlatma */
+}
+
+/* Mobil uyumlu hale getirme */
+@media screen and (max-width: 768px) {
+  .vegetables-table td,
+  .vegetables-table th {
+    padding: 8px !important; /* Küçük ekranlarda daha az padding */
+  }
+
+  .vegetables-table {
+    font-size: 0.8em !important; /* Küçük ekranlarda font boyutunu daha da küçültüyoruz */
+  }
+}

@@ -1,0 +1,98 @@
+/* Seçim rengi */
+.vegetables-table ::selection {
+  background-color: #c1d85a !important;
+}
+
+/* Section görünümü */
+.vegetables-table-container {
+  margin-top: 50px;
+  font-family: 'Arial', sans-serif;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Başlık */
+.vegetables-table-container h2 {
+  color: #2c3e50;
+  font-size: 1.8em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Tablo temel stil */
+.vegetables-table {
+  width: 80% !important;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.vegetables-table th,
+.vegetables-table td {
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #000000;
+}
+
+/* Başlık hücreleri */
+.vegetables-table th {
+  background-color: #083350 !important;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* ✅ Sadece 1. Hafta (2. sütun) renkli olsun */
+.vegetables-table td:nth-child(2),
+.vegetables-table th:nth-child(2) {
+  background-color: #ffe082; /* Sarı ton — dikkat çekici */
+  font-weight: 600;
+}
+
+/* Diğer sütunlar: yumuşak renkli zebra */
+.vegetables-table td:nth-child(3),
+.vegetables-table th:nth-child(3) {
+  background-color: #e0f7fa;
+}
+
+.vegetables-table td:nth-child(4),
+.vegetables-table th:nth-child(4) {
+  background-color: #f1f8e9;
+}
+
+.vegetables-table td:nth-child(5),
+.vegetables-table th:nth-child(5) {
+  background-color: #fff3e0;
+}
+
+/* Hover efekti */
+.vegetables-table tr:hover {
+  cursor: pointer;
+}
+
+/* Kenarlıklar */
+.vegetables-table td,
+.vegetables-table th {
+  border: 1px solid #ffffff;
+}
+
+.vegetables-table td {
+  border-radius: 5px;
+}
+
+/* Mobil uyum */
+@media screen and (max-width: 768px) {
+  .vegetables-table td,
+  .vegetables-table th {
+    padding: 8px !important;
+  }
+
+  .vegetables-table {
+    font-size: 0.8em !important;
+  }
+}

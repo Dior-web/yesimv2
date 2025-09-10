@@ -1,0 +1,9 @@
+  p {
+    text-indent: 2em;
+  }
+  #besin-alerjisi-diyetleri {
+    text-transform: capitalize !important;
+  }
+  #diyetisyenyasemin-çalışır{
+    text-transform: uppercase !important;
+  }

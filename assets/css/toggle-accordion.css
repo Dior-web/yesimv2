@@ -1,0 +1,12 @@
+/* İçerikler kapalı başlasın */
+.elementor-tab-content { display: none; }
+
+/* Aktif başlığın içeriğini göster */
+.elementor-tab-title.elementor-active + .elementor-tab-content { display: block; }
+
+/* ikon geçişleri (varsa) */
+.elementor-toggle-icon-opened { display: none; }
+.elementor-tab-title.elementor-active .elementor-toggle-icon-opened { display: inline-block; }
+.elementor-tab-title.elementor-active .elementor-toggle-icon-closed { display: none; }
+
+.elementor-tab-title { cursor: pointer; }

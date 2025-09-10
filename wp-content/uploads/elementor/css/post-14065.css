@@ -1,0 +1,22 @@
+.elementor-widget-toggle .elementor-toggle-title,
+.elementor-widget-toggle .elementor-toggle-icon {
+  color: var(--e-global-color-primary);
+}
+.elementor-widget-toggle .elementor-toggle-icon svg {
+  fill: var(--e-global-color-primary);
+}
+.elementor-widget-toggle .elementor-tab-title.elementor-active a,
+.elementor-widget-toggle
+  .elementor-tab-title.elementor-active
+  .elementor-toggle-icon {
+  color: var(--e-global-color-accent);
+}
+.elementor-widget-toggle .elementor-toggle-title {
+  font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+  font-weight: var(--e-global-typography-primary-font-weight);
+}
+.elementor-widget-toggle .elementor-tab-content {
+  color: var(--e-global-color-text);
+  font-family: var(--e-global-typography-text-font-family), Sans-serif;
+  font-weight: var(--e-global-typography-text-font-weight);
+}
