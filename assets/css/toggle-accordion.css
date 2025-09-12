@@ -10,3 +10,22 @@
 .elementor-tab-title.elementor-active .elementor-toggle-icon-closed { display: none; }
 
 .elementor-tab-title { cursor: pointer; }
+
+:root { --header-offset: 120px; } /* sabit menü yüksekliğin kadar ayarla */
+.elementor-toggle { overflow-anchor: none; } /* tarayıcının otomatik kaydırma düzeltmesini kapat */
+
+/* Aktif başlığı header'ın altına sabitle */
+.elementor-tab-title.elementor-active{
+  position: sticky;
+  top: var(--header-offset);
+  z-index: 10;
+  background: #fff;   /* başlık okunsun diye */
+}
+
+/* bonus: scrollIntoView vb. kullanımlarda tampon */
+.elementor-tab-title { scroll-margin-top: var(--header-offset); }
+
+/* Mobilde header daha kısa/uzunsa değiştir */
+@media (max-width: 782px){
+  :root { --header-offset: 80px; }
+}
