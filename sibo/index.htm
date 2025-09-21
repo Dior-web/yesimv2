@@ -2459,7 +2459,7 @@
                           >
                           <ul> 
                             <li>
-                              SIBO tedavisinde beslenme önemli bir rol oynar. FODMAP'ler gibi belirli gıdalar sindirim
+                              SIBO tedavisinde beslenme önemli bir rol oynar. <a href="../sistem-hastalıkları/index.htm#elementor-tab-title-1391">FODMAP'ler</a> gibi belirli gıdalar sindirim
 sisteminde gaz ve şişkinliğe neden olabilir, bu yüzden SIBO hastalarının beslenme
 düzenlerinde bu gıdalardan kaçınmaları veya tüketimlerini sınırlamaları önerilir.
                             </li> 
@@ -2924,6 +2924,83 @@ düzenlerinde bu gıdalardan kaçınmaları veya tüketimlerini sınırlamaları
       id="elementor-frontend-js"
     ></script>
       <script src="/assets/js/toggle-accordion.js" defer></script>
+<script>
+// Güvenli seçim için CSS.escape (eski tarayıcılar için fallback)
+window.CSS = window.CSS || {};
+if (!window.CSS.escape) {
+  window.CSS.escape = s => String(s).replace(/[^a-zA-Z0-9_\u00A0-\uFFFF-]/g, '\\$&');
+}
+
+(function () {
+  function getFixedHeaderOffset() {
+    // Sende sabit bir header varsa buraya ekle
+    // Örn: .site-header, header, .elementor-location-header
+    const selectors = ['.site-header', 'header', '.elementor-location-header'];
+    for (const sel of selectors) {
+      const el = document.querySelector(sel);
+      if (el && getComputedStyle(el).position === 'fixed') {
+        return el.offsetHeight || 0;
+      }
+    }
+    return 0;
+  }
+
+  function openElementorAccordionFor(el) {
+    // Hedef bir tab başlığıysa veya onun içindeyse akordeonu aç
+    const item = el.closest('.elementor-toggle-item') || el;
+    const titleBtn =
+      item.querySelector('.elementor-tab-title') ||
+      el.closest('.elementor-tab-title') ||
+      el;
+
+    if (titleBtn && titleBtn.getAttribute('aria-expanded') !== 'true') {
+      titleBtn.click(); // Elementor'un kendi açma davranışı
+    }
+
+    // İçerik alanı varsa (aria-controls ile) biraz bekleyip kaydır
+    const targetToScroll = item || titleBtn || el;
+    setTimeout(() => {
+      const offset = getFixedHeaderOffset();
+      const y = targetToScroll.getBoundingClientRect().top + window.pageYOffset - offset - 8;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }, 100);
+  }
+
+  function findTarget(hash) {
+    if (!hash) return null;
+    const id = decodeURIComponent(hash.replace(/^#/, ''));
+    // 1) Doğrudan ID
+    let el = document.getElementById(id);
+    if (el) return el;
+    // 2) name attributelu anchor
+    el = document.querySelector(`a[name="${CSS.escape(id)}"]`);
+    if (el) return el;
+    // 3) Güvenlik için id'yi CSS seçiciyle dene
+    try { el = document.querySelector('#' + CSS.escape(id)); } catch (_) {}
+    return el || null;
+  }
+
+  function handleHashNavigation() {
+    const el = findTarget(window.location.hash);
+    if (!el) return;
+
+    // Eğer element zaten görünürse yine de kaydır; akordeonsa aç
+    if (el.closest('.elementor-toggle-item') || el.classList.contains('elementor-tab-title')) {
+      openElementorAccordionFor(el);
+    } else {
+      const offset = getFixedHeaderOffset();
+      const y = el.getBoundingClientRect().top + window.pageYOffset - offset - 8;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
+  // Sayfa yüklenince (hash varsa) çalıştır
+  document.addEventListener('DOMContentLoaded', handleHashNavigation);
+  // Hash değişince (SPA benzeri navigasyonlarda) tekrar çalıştır
+  window.addEventListener('hashchange', handleHashNavigation);
+})();
+</script>
+
 
   </body>
 </html>
